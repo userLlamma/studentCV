@@ -1,0 +1,292 @@
+/* 基础布局 */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.resume-editor {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.resume-content {
+  width: 190mm;
+  min-height: 277mm;
+  padding: 15mm 12mm;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 头部样式 */
+.header-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  align-items: flex-start;
+}
+
+.avatar-section {
+  flex-shrink: 0;
+  width: 85px;
+  height: 105px;
+}
+
+.basic-info h1 {
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  font-size: 13px;
+}
+
+/* 主体布局 */
+.resume-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 15px;
+}
+
+/* 章节样式 */
+.resume-section {
+  margin-bottom: 12px;
+}
+
+.resume-section h2 {
+  font-size: 15px;
+  color: #1890ff;
+  border-bottom: 1px solid #1890ff;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.resume-section h3 {
+  font-size: 14px;
+  margin: 0 0 4px;
+  color: #2c3e50;
+}
+
+/* 列表样式 */
+ul {
+  list-style-type: disc;
+  padding-left: 16px;
+  margin: 4px 0;
+}
+
+li {
+  margin: 3px 0;
+  color: #555;
+}
+
+/* 项目与经历样式 */
+.education-item,
+.project-item,
+.experience-item {
+  margin-bottom: 8px;
+}
+
+.time-range {
+  color: #666;
+  font-size: 12px;
+}
+
+/* 确保内容不溢出 */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 文本处理 */
+p, li, h1, h2, h3, .info-item {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 响应式布局 */
+@media screen and (max-width: 210mm) {
+  .resume-editor {
+    padding: 10px;
+  }
+  
+  .resume-content {
+    width: 100%;
+    padding: 10mm 8mm;
+  }
+
+  .resume-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .resume-editor {
+    padding: 0;
+    background: none;
+  }
+
+  .resume-content {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 12mm 10mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .resume-body {
+    gap: 12px;
+  }
+
+  /* 优化打印时的字体大小 */
+  body {
+    font-size: 12px;
+  }
+
+  .resume-section h2 {
+    font-size: 14px;
+  }
+
+  .resume-section h3 {
+    font-size: 13px;
+  }
+}
+
+/* 美化样式 */
+.resume-section h2 {
+  position: relative;
+}
+
+.resume-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #1890ff 0%, rgba(24,144,255,0.1) 100%);
+}
+
+/* 紧凑型列表样式 */
+ul {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+li {
+  line-height: 1.4;
+  padding-bottom: 2px;
+}
+
+/* 时间和地点的样式 */
+.time-location {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+/* 技能标签样式 */
+.skill-tag {
+  display: inline-block;
+  background: rgba(24,144,255,0.1);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin: 2px;
+  font-size: 12px;
+  color: #1890ff;
+}
+
+/* 基础布局 */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.resume-editor {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.resume-content {
+  width: 210mm;  /* 改回A4尺寸 */
+  min-height: 297mm;
+  padding: 20mm 15mm;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* 打印样式修复 */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .resume-editor {
+    padding: 0;
+    background: none;
+    min-height: auto;
+  }
+
+  .resume-content {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm 15mm;
+    margin: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .resume-body {
+    gap: 12px;
+  }
+
+  .print-button {
+    display: none !important;
+  }
+}
+
+/* 响应式布局修复 */
+@media screen and (max-width: 210mm) {
+  .resume-editor {
+    padding: 10px;
+  }
+  
+  .resume-content {
+    width: 100%;
+    min-height: auto;
+    padding: 15mm 12mm;
+  }
+}
