@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# 交互式学生简历制作系统
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是一个基于 React 开发的交互式简历制作系统。学生可以通过点击简历各个段落来实时修改内容，并支持导出 PDF 格式。
 
-## Available Scripts
+## 主要功能
 
-In the project directory, you can run:
+- 实时编辑：点击简历任意段落即可修改内容
+- PDF导出：一键生成 PDF 格式简历文件
+- 简洁界面：专注于内容编辑的清爽界面
 
-### `npm start`
+## 使用限制
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 仅支持PC端访问，移动端PDF导出功能可能存在兼容性问题
+- 建议使用 Chrome、Firefox 等主流浏览器访问
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 部署说明
 
-### `npm test`
+### 环境要求
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 16.x (建议使用 nvm 进行版本管理)
+- npm 
 
-### `npm run build`
+### 安装步骤
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. 切换 Node.js 版本:
+```bash
+nvm use 16
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. 安装依赖:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. 构建生产环境代码:
+```bash
+npm run build
+```
 
-### `npm run eject`
+4. 部署:
+将 `build` 目录下的所有文件复制到 HTTP 服务器的 `resume/` 目录下即可访问
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 开发模式
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
+启动开发服务器后访问 http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 技术栈
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React
+- Create React App
+- HTML2PDF 
 
-## Learn More
+## 注意事项
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 目前界面仅针对桌面端进行了优化
+- 移动端访问可能会出现排版错误
+- PDF导出功能在移动端可能无法正常使用
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+您想了解更多信息或需要我详细说明某个部分吗？
